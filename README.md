@@ -1,8 +1,8 @@
 # Fuzzy Search Implementation in Asp.Net
-# Intorduction
+## Intorduction
 This is a demo application to implement fuzzy search in asp.net application using Levenshtein Distance algorithm.
 
-## Levenshtein Distance Implementation in C#
+### Levenshtein Distance Implementation in C#
 Levenshtein. In 1965 Vladmir Levenshtein created a distance algorithm. This tells us the number of edits needed to turn one string into another. With Levenshtein distance, we measure similarity and match approximate strings with fuzzy logic.
 Info:
 Returns the number of character edits (removals, inserts, replacements) that must occur to get from string A to string B.
@@ -74,7 +74,7 @@ Note:                 The first 3 letters must be changed
         }
     }
                       
-## Extension Method to String to Implementation of an Comparision
+### Extension Method 
 
 Extension methods enable you to add methods to existing types without creating a new derived type, recompiling, or otherwise modifying the original type. 
 
