@@ -40,11 +40,20 @@ namespace Fuzzy_search_Demo
 
 
             Console.WriteLine("\n\n\n---------------------------------------------------------------");
-            Console.WriteLine("Fuzzy search result is : ");
-            foreach (var item in searchedString)
+
+            if(searchedString.Count() > 0)
             {
-                Console.WriteLine(item); 
+                Console.WriteLine($"Fuzzy search result for '{searchTerm}' is : ");
+                foreach (var item in searchedString)
+                {
+                    Console.WriteLine(item);
+                }
             }
+            else
+            {
+                Console.WriteLine($"No result found for search term '{searchTerm}'.");
+            }
+           
 
             Console.WriteLine("\n\n\n==========Enter any key to exit============");
             Console.ReadKey();   
