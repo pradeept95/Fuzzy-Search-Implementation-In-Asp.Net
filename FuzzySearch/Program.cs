@@ -1,4 +1,4 @@
-﻿using Fuzzy_search_Demo.Extensions;
+﻿using FuzzySearch.AspNetCore.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,7 +36,7 @@ namespace Fuzzy_search_Demo
             Console.WriteLine("\n\n\nEnter Search Term to search on the list");
             var searchTerm = Console.ReadLine();
              
-            var searchedString = l.Where(x => searchTerm.IsFuzzySimilar(x, 2));
+            var searchedString = l.Where(x => searchTerm.IsFuzzySimilar(x, 2, FuzzySearch.AspNetCore.FuzzyAlgorithm.DamerauLevenshteinDistance));
 
 
             Console.WriteLine("\n\n\n---------------------------------------------------------------");

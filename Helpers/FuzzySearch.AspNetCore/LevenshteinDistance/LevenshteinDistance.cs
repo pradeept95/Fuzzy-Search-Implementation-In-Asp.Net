@@ -1,13 +1,13 @@
 ﻿using System;
 
-namespace Fuzzy_search_Demo
+namespace FuzzySearch.AspNetCore.LevenshteinDistances
 {
     static class LevenshteinDistance
     {
         /// <summary>
         /// Compute the distance between two strings.
         /// </summary>
-        public static int Compute(string s, string t)
+        public static int GetLevenshteinDistance(string s, string t)
         {
             int n = s.Length;
             int m = t.Length;
