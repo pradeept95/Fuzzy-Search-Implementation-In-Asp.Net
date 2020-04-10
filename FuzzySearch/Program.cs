@@ -22,7 +22,8 @@ namespace Fuzzy_search_Demo
                 "toradol",
                 "at" ,
                 "kitten",
-                "sitting" 
+                "sitting",
+                "Hello World"
             };
 
             Console.WriteLine("\n\n\n---------------------------------------------------------------");

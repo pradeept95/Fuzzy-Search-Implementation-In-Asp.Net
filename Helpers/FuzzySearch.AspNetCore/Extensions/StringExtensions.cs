@@ -1,5 +1,6 @@
 ﻿using FuzzySearch.AspNetCore.Factory;
 using System;
+using System.Linq;
 
 namespace FuzzySearch.AspNetCore.Extensions
 {
@@ -17,7 +18,23 @@ namespace FuzzySearch.AspNetCore.Extensions
                 throw new InvalidOperationException($"fuzzyness can't be less than 0");
             }
 
-            return (DistanceFactory.GetDistances(input, parameter) < fuzzyness) || input.Contains(parameter) || parameter.Contains(input);
+
+            var string1 = "";
+            var string2 = ""; 
+
+            return (DistanceFactory.GetDistances(GetCanonicalForm(input), GetCanonicalForm(parameter)) < fuzzyness) || input.Contains(parameter) || parameter.Contains(input);
+        }
+
+        private static string GetCanonicalForm(string stringTerm)
+        {
+            if (stringTerm == null) throw new ArgumentNullException("stringTerm");
+
+            return stringTerm
+                .Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                .Select(x => x.ToUpper())
+                .OrderBy(x => x)
+                .Aggregate("", (x, y) => $"{x} {y}")
+                .Trim();
         }
     }
 }
